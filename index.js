@@ -10,7 +10,7 @@ console.log('Hola Mundo')
 //var: es la forma antigua de definirla en JS. Va al inicio del archivo
 //let: le indicamos a js que el texto que vamos a escribir luego es una variable, sin necesidad de saber que valor contiene luego
 //const
-
+/*
 let miPrimeraVariable = 'Mi primera variable'
 console.log(miPrimeraVariable)
 
@@ -102,3 +102,115 @@ console.log(resultado3)
 
 const resultadoNot = !true // va a dar vuelta el valor de true y lo va a dejar como false
 const resultadoOr = false || false || 'Hola' || 'Mundo' // mundo no me lo imprime porque toma hasta el primer valor true, y true pueden ser numeros, booleans o strings, en and va a buscar valores hasta el primer false
+*/
+
+//control de flujo if y else
+/*
+if (true) {
+    console.log('Estoy dentro de un if')
+} else {
+    console.log('El niño no puede jugar')
+}
+*/
+
+//control de flujo, while
+/*
+let x = 0
+while (x < 5) {
+    console.log(x)
+    x++
+}
+*/
+
+//control de flujo - switch
+
+/*
+switch (1) {
+    case 1: {
+        console.log('Soy el caso 1')
+        break;
+    }
+    case 2: {
+        console.log('Soy el caso 2')
+        break;
+    }
+    case 3: 
+        console.log('Soy el caso 3')
+        break;
+    default:
+        console.log('Soy el caso por defecto')
+        break;
+}
+
+*/
+
+//Bucle de for
+/*
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+*/
+/*
+console.log(numeros[0]) //Accedo al elemento en la posicion 0
+const numeros=[1,2,'hola',4,5]
+
+for (let i = 0; i < numeros.length; i++) {
+    console.log(numeros[i])
+}  
+*/
+//funciones
+
+/*
+function iterar(arg1) {
+    for (let i = 0; i < arg1.length; i++) {
+        console.log(arg1[i])
+    }  
+}  
+
+const numeros=[1,2,'hola',4,5]
+const nombres=['felipe', 'juan', 'lalal']
+iterar(numeros)
+iterar(nombres)
+*/
+
+//funciones con parametros 
+/*
+function suma(a, b) {
+    return a + b;
+}
+
+const resultadoSuma1 = suma(1,2)
+
+console.log('resultado', resultadoSuma1)
+*/
+
+function sumar(a, b, cb) {
+    const r = a + b;
+    cb(r)
+}
+
+function callback(result) {
+    console.log('resultado', result)
+}
+
+sumar(2, 3, callback) //Le paso una funcion a otra funcion, en vez de llamarla directo adentro
+
+//en js las funciones tambien cumplen la funcion de ser valores
+
+// fat arrow function, sirve para funciones cortas y no hace falta explicitar el return
+
+const miFatArrowFunction = (a, b) => a + b
+//const r = miFatArrowFunction(1, 2)
+
+const otraFAF = (a, b) => {
+    return a + b
+}
+
+const r = otraFAF(1, 2)
+console.log(r)
+
+// Funciones anonimas
+
+sumar(2, 3, function (r){
+    console.log('El resultado de mi funcion anonima es',r)
+})
